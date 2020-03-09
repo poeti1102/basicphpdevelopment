@@ -26,4 +26,6 @@
 	$total = add(12,12);
 	print($total);
 	
+
+	// Do exercise 2
 ?>

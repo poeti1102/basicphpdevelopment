@@ -1,0 +1,21 @@
+4 important SQL operations
+
+Group that affect database -
+    INSERT - Insert new row in database
+    UPDATE - Modify or edit Rows (With Condition)
+    DELETE - Delete Row or Rows (With Condition)
+
+Group that doesn't effect database -
+SELECT - Take rows from table for display or manipulate (Displaying Purpose)
+
+
+Syntax -
+
+INSERT INTO `table_name`(`column_name`,...) VALUES('values',....)
+UPDATE `table_name` SET `column_name`='value' , .... WHERE / AND / OR / LIKE
+DELETE FROM `table_name` WHERE / AND / OR / LIKE 
+SELECT `column_names` / *
+    FROM `table_name`
+    WHERE / AND / OR / LIKE / JOIN
+
+CRUD (Create Read Update Delete)

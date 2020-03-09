@@ -24,4 +24,6 @@
 	echo "$number1 power $number2 = $power";
 	echo "<br/>";
 
+
+	// Do exercise 1
 ?>
