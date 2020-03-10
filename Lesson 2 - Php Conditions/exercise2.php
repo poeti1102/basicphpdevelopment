@@ -1,4 +1,20 @@
 <?php
+	/*
+	*
+	*	PowerRanger Quiz
+	*	from 1 -> 100
+	*	Dividable by 3 => Power
+	*	Dividable by 5 => Ranger
+	*	Dividable by both 3 and 5 => PowerRanger
+	*	
+	*
+	*
+	*
+	*
+	*
+	*
+	*
+	*/
 	for($num = 1 ; $num <= 100 ; $num++)
 	{
 		switch ($num) {

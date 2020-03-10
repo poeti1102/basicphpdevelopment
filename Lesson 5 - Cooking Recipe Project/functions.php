@@ -30,12 +30,61 @@
 
 	function update()
 	{
+		$name = $_POST['name'];
+		$desc = $_POST['desc'];
+		$items = $_POST['items'];
+		$id = $_POST['id'];
 
+		$dir = "images/";
+		
+
+		// print_r($_FILES["image"]);
+		if(empty($_FILES["image"]))
+		{
+			$image =$_POST['old_image'];
+		} else {
+			$image = time(). '_' . $_FILES["image"]["name"];
+		}
+		die();
+
+		// Check Image exist or not
+
+		$sql = "UPDATE `recipes` SET `name` = :name , `description` = :desc , `items` = :items , `image` = :image WHERE `id` = :id";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([
+			':name' => $name,
+			':desc' => $desc,
+			':items' => $items,
+			':image' => $image,
+			':id' => $id,
+		]);
+
+		if(empty($_FILES["image"]))
+		{
+			// Do nothing
+		} else {
+			// Move new file
+			move_uploaded_file( $_FILES["image"]["tmp_name"] , $dir . $image);
+			// Delete old file
+
+		}
+		
+
+		$_SESSION['edit_success'] = 1;
+
+		header("location: edit.php");
 	}
 
 	function delete()
 	{
+		$id = $_POST['id'];
+		$sql = "DELETE FROM `recipes` WHERE `id` = :id";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([":id" => $id]);
 
+		$_SESSION['delete_success'] = 1;
+
+		header("location: index.php");
 	}
 
 	if(isset($_POST['add']))
