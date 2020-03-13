@@ -23,4 +23,12 @@
     // $time = "20/03/2020 08:45:08 AM";
     // echo substr($time , 0  , 10); // 08:45:08 AM
 
+    // Hashing
+    // password_hash( $string , algorithm)
+    // PASSWORD_BCRYPT, PASSWORD_DEFAULT
+
+    // password_verify($string , $hashed_string)
+    // $name = "Lin Aung";
+    // $name_hashed = password_hash($name , PASSWORD_BCRYPT);
+    // echo $name_hashed;
 ?>
